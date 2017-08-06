@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title> LPL纯CSS代码实现图片(无缝)轮播 </title>
+  <meta charset="utf-8" />
+  <meta name="description" content="无缝轮播" />
+  <meta name="keywords" content="css3,无缝轮播" />
+	<meta name="author" content="lpl@ 2017.0805">
+<style>
+	#lunbo{
+		position: relative;
+		width: 114px;
+		height: 114px;
+		overflow: hidden;
+	}
+	#lunboBox{
+		width: calc(114px * 4);
+		animation: keyframe 7s ease 0s infinite normal;
+		-webkit-animation: keyframe 7s ease 0s infinite normal;
+	}
+	#lunboBox img {
+		/*display: inline-block;*/
+		float: left;
+	}
+	@-webkit-keyframes keyframe{
+		    0%,14% { transform: translate(0px, 0)}
+		  28%,42% {transform: translate(-114px, 0)}
+		  56%,70% { transform: translate(-228px, 0)}
+		  84%,100% {transform: translate( -342px, 0)}
+		  /*99%,100% {transform: translate( -342px, 0)}*/
+	}
+	@-moz-keyframes keyframe{
+		    0%,14% { transform: translate(0px, 0)}
+		  28%,42% {transform: translate(-114px, 0)}
+		  56%,70% { transform: translate(-228px, 0)}
+		  84%,98% {transform: translate( -342px, 0)}
+		  99%,100% {transform: translate( -342px, 0)}
+	}
+	@-o-keyframes keyframe{
+		    0%,14% { transform: translate(0px, 0)}
+		  28%,42% {transform: translate(-114px, 0)}
+		  56%,70% { transform: translate(-228px, 0)}
+		  84%,98% {transform: translate( -342px, 0)}
+		  99%,100% {transform: translate( -342px, 0)}
+	}
+
+</style>
+ </head>
+ <body>
+ 	<div id="lunbo" >
+	    <div id="lunboBox" style="">
+	        <img  width="114px" height="114px" src="img/rw3.jpg">
+	        <img   width="114px" height="114px" src="img/rw1.jpg">
+	         <img   width="114px" height="114px" src="img/rw2.jpg">
+	         <!--下面这个是无缝轮播关键点  copy第一个img图片欺骗客户眼睛,达到从头再来的效果,其实最后一张跟第一张img是重叠在一起的
+	         参考于: https://segmentfault.com/q/1010000007956769?_ea=1504152-->
+	         <img   width="114px" height="114px" src="img/rw3.jpg">
+	    </div>
+	</div>
+</body>
+</html>
